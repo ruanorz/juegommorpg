@@ -1,0 +1,20 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	{% if user.is_authenticated %}
+		<h1>Estas logueado</h1>
+		<form method="POST" action="/salir/">{% csrf_token %}
+		
+		<input type="submit" value="salir"></input>
+	</form>
+	{% else %}
+	<form method="POST" action="">{% csrf_token %}
+		{{form}}
+		<input type="submit" value="enviar"></input>
+	</form>
+	{% endif %}
+
+</body>
+</html>
