@@ -1,0 +1,128 @@
+{% extends "baseGame.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+
+{% if faccionusuario == 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalOrcos">
+
+<div class="col s12 m4 l2" ><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:150px">
+    	<div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">WALL!</span>
+              <center>
+              		<img src="{% static 'images/murallao.png' %}" width="172" height="176" />
+                  <font color="black"><b>
+              		<p>Welcome to your WALL, gives you DEFENSE</p>
+              		<p>CURRENT LEVEL: {{nivel}}</p>
+                  <p>DEFENSE: {{defensa}}</p>
+              		<p>Cost for upgrade: Wood:{{costemadera}} Iron: {{costemetal}} </p>
+                  </b></font>
+
+              		{% if actualizacionencurso == 0 %}
+              			
+              			
+              			{% if madera > costemadera and metal > costemetal %}
+
+              			
+              				
+	              				<form action="/game/build/wall/upgrade/" method="post">{% csrf_token %}
+					    		<input type="hidden" name="nivel" value="{{nivel}}" />
+								<button class="btn waves-effect waves-light" type="submit" name="action" value="enviar">Upgrade
+							    <i class="material-icons right">send</i>
+							  </button>
+					   		</form>
+				   			
+              			{% endif %}
+              			{% if madera < costemadera or metal < costemetal %}
+              				<font color="black"><b><p>NOT ENOUGH MATERIALS!</p></b></font>
+              			{% endif %}
+              		{% endif %}
+              		{% if actualizacionencurso != 0 %}
+              			<font color="black"><b><p>WE HAVE A BUILDING UPDATING! PLEASE WAIT</p></b></font>
+              		{% endif %}
+
+                </center>
+            </div>
+            <div class="card-action">
+              <a href="/game/city/">back</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+	</div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+
+{% endif %}
+{% if faccionusuario != 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalHumanos">
+
+
+<div class="col s12 m4 l2" ><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:150px">
+      <div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">WALL!</span>
+              <center>
+                  <img src="{% static 'images/murallaa.png' %}" width="172" height="176" />
+                  <font color="black"><b>
+                  <p>Welcome to your WALL , gives you DEFENSE</p>
+                  <p>CURRENT LEVEL: {{nivel}}</p>
+                  <p>DEFENSE: {{defensa}}</p>
+                  <p>Cost for upgrade: Wood:{{costemadera}} Iron: {{costemetal}} </p>
+                  </b></font>
+
+                  {% if actualizacionencurso == 0 %}
+                    
+                    
+                    {% if madera > costemadera and metal > costemetal %}
+
+                    
+                      
+                        <form action="/game/build/wall/upgrade/" method="post">{% csrf_token %}
+                  <input type="hidden" name="nivel" value="{{nivel}}" />
+                <button class="btn waves-effect waves-light" type="submit" name="action" value="enviar">Upgrade
+                  <i class="material-icons right">send</i>
+                </button>
+                </form>
+                
+                    {% endif %}
+                    {% if madera < costemadera or metal < costemetal %}
+                      <font color="black"><b><p>NOT ENOUGH MATERIALS!</p></b></font>
+                    {% endif %}
+                  {% endif %}
+                  {% if actualizacionencurso != 0 %}
+                    <font color="black"><b><p>WE HAVE A BUILDING UPDATING! PLEASE WAIT</p></b></font>
+                  {% endif %}
+                                    
+                </center>
+            </div>
+            <div class="card-action">
+              <a href="/game/city/">back</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+{% endif %}
+
+
+{% endblock %}

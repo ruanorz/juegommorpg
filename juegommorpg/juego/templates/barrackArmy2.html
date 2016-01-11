@@ -1,0 +1,109 @@
+{% extends "baseGame.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+
+{% if faccionusuario == 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalOrcos">
+
+
+<div class="col s12 m4 l2" ><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:150px; ">
+    	<div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">{{valores.1}}</span>
+              <center>
+              		
+              		<img src="/static/images/{{valores.13}}" />
+                  {% if maxi > 0 %}
+                  <form action="/game/build/barrack/army2Complete/" method="post">{% csrf_token %}
+                    <p class="range-field">
+      <input type="range" id="test5" min="1" max="{{maxi}}" name="rangeInput" />
+    </p>
+                  {% endif %}
+                <font color="black"><b><p>Maximum that can create: {{maxi}}</p></b></font>
+
+                {% if maxi > 0 %}
+              <button class="btn waves-effect waves-light" type="submit" name="action" value="enviar">Create
+    <i class="material-icons right">send</i>
+  </button>
+                {% endif %}
+                <input type="hidden" name="idbicho" value="{{idbicho}}" />         
+                </form>
+
+
+
+              </center>
+            </div>
+            <div class="card-action">
+              <a href="/game/city/">back</a>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+
+	</div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+
+{% endif %}
+{% if faccionusuario != 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalHumanos">
+
+
+<div class="col s12 m4 l2" ><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:150px; ">
+      <div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">{{valores.0}}</span>
+              <center>
+                  
+                  <img src="/static/images/{{valores.11}}" />
+                  {% if maxi > 0 %}
+                  <form action="/game/build/barrack/army2Complete/" method="post">{% csrf_token %}
+                    <p class="range-field">
+      <input type="range" id="test5" min="1" max="{{maxi}}" name="rangeInput" />
+    </p>
+                  {% endif %}
+                <font color="black"><b><p>Maximum that can create: {{maxi}}</p></b></font>
+
+                {% if maxi > 0 %}
+              <button class="btn waves-effect waves-light" type="submit" name="action" value="enviar">Create
+    <i class="material-icons right">send</i>
+  </button>
+                {% endif %}
+                <input type="hidden" name="idbicho" value="{{idbicho}}" />         
+                </form>
+
+
+
+              </center>
+            </div>
+            <div class="card-action">
+              <a href="/game/city/">back</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+{% endif %}
+
+
+
+
+{% endblock %}

@@ -1,0 +1,10 @@
+SoldadoRaso:Grunt:1:100:75:0:1:100:200:20:1:soldadoraso.gif:60:grunt.gif:
+Fusilero:Lanzahachas:2:125:50:0:1:150:150:20:1:fusilero.gif:60:lanzahachas.gif:
+Hechicera:Chaman:3:300:30:0:1:100:200:20:3:hechicera.gif:90:chaman.gif:
+Paladin:Tauren:4:200:100:0:1.5:200:300:30:5:paladin.gif:120:tauren.gif:
+Mortero:Demoledor:5:400:10:0:0.5:400:200:20:5:mortero.gif:120:demoledor.gif:
+Caballero:Incursor:6:100:70:0:3:100:200:20:5:caballero.gif:120:incursor.gif:
+Grifo:Murcielago:7:175:75:0:2.5:200:350:30:7:grifo.gif:180:murcielago.gif:
+Archimago:Vidente:8:150:50:0:3:150:250:20:7:archimago.gif:180:vidente.gif:
+Autogiro:Wyvern:9:250:50:0:2.5:250:500:40:10:autogiro.gif:220:wyvern.gif:
+Tanque:BestiaKodo:10:500:10:0:0.5:400:500:30:10:tanque.gif:220:kodo.gif:

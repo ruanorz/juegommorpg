@@ -1,0 +1,506 @@
+{% load staticfiles %}
+
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>WarCommander - {% block title %}{% endblock %}</title>
+	<!-- FUENTES -->
+    <!-- LETRAS LOGO CODEINCOAT -->
+	<link href='https://fonts.googleapis.com/css?family=Amatic+SC:700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- LETRAS DE PRUEBA -->
+    <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+	<!-- HOJAS DE ESTILOS
+	<link rel="stylesheet" type="text/css" href="{% static 'dist/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'dist/flexbox/index.min.css' %}">-->
+	<link rel="stylesheet" type="text/css" href="{% static 'dist/materialize/css/materialize.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mycss.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'dist/animatecss/animate.css' %}">
+
+	<!-- ICONOS -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript" src="{{ STATIC_URL }} /static/dist/jquery/jquery-1.11.3.min.js">
+	</script>
+	<script type="text/javascript" src="{{ STATIC_URL }} /static/dist/materialize/js/materialize.min.js">
+	</script>
+
+
+<script src="{% static 'dist/sweetalert/sweetalert.min.js' %}"></script> 
+<link rel="stylesheet" type="text/css" href="{% static 'dist/sweetalert/sweetalert.css' %}">
+
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $('select').material_select();
+  });
+</script>
+
+<style>
+main, footer {
+      padding-left: 240px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      main, footer {
+        padding-left: 0;
+      }
+    }
+</style>
+
+<!--
+
+  SCRIPT HORA SERVIDOR
+
+-->
+
+<script type="text/javascript">
+  function reloj(){
+    var fecha=new Date();
+    var hora=fecha.getHours();
+    hora=hora.toString();
+    if(hora.length<2){
+      hora="0"+hora;  
+    }
+    var minu=fecha.getMinutes();
+    minu=minu.toString();
+    if(minu.length<2){
+      minu="0"+minu;  
+    }
+    var seg=fecha.getSeconds();
+    seg=seg.toString();
+    if(seg.length<2){
+      seg="0"+seg;  
+    }
+    var recharge=setTimeout('reloj()',1000);
+    document.getElementById('reloj').innerHTML=hora+":"+minu+":"+seg;   
+  }
+</script>
+
+
+<!--
+
+SCRIPT RECURSOS
+
+
+-->
+<script type="text/javascript">
+  var ratiosumamadera='{{ratiosumamadera}}';
+  var ratiosumametal='{{ratiosumametal}}';
+
+  var capmadera='{{cap_madera}}';
+  var madera='{{madera}}';
+  var maderafloat = parseFloat(madera);
+  
+  var capmetal='{{cap_metal}}';
+  var metal='{{metal}}';
+  var metalfloat = parseFloat(metal);
+  
+function kk(){
+  maderafloat += parseFloat(ratiosumamadera);
+  if(maderafloat>=capmadera){
+    maderafloat=capmadera;
+  }
+  
+  metalfloat += parseFloat(ratiosumametal);
+  if(metalfloat>=capmetal){
+    metalfloat=capmetal;
+  }
+  maderafloat=Math.round(maderafloat*Math.pow(10,2))/Math.pow(10,2);
+  metalfloat=Math.round(metalfloat*Math.pow(10,2))/Math.pow(10,2);
+  var recarga = setTimeout("kk()",1000);
+  document.getElementById("madera").innerHTML = "" + maderafloat;
+  document.getElementById("metal").innerHTML = "" + metalfloat;
+}
+</script>
+
+
+
+<!-- SCRIPTS CONTADORES EVENTOS-->
+
+
+<script type="text/javascript">
+  var restante = '{{restante}}';
+  var edificio = '{{edificioactualizado}}';
+  function contador1(){
+    
+    
+    var horas=Math.floor(restante/3600);
+    var minutos=Math.floor((restante-(horas*3600))/60);
+    var segundos=Math.floor(restante-(horas*3600)-(minutos*60));
+    
+    restante=restante-1;
+    var recharge=setTimeout('contador1()',1000);
+    
+    if(restante>0 && restante<1){
+      document.location.href = document.location.href;
+      
+    }
+    if(restante>=0){
+      document.getElementById('contador1').innerHTML=horas+" h "+minutos+" m "+segundos+" s -> "+edificio;
+    }
+      
+    
+    
+  }
+</script>
+
+<script type="text/javascript">
+  var restante2 = '{{restante2}}';
+  var cantidad2 = '{{cantidad2}}';
+  function contador2(){
+    
+    
+    var horas=Math.floor(restante2/3600);
+    var minutos=Math.floor((restante2-(horas*3600))/60);
+    var segundos=Math.floor(restante2-(horas*3600)-(minutos*60));
+    
+    restante2=restante2-1;
+    var recharge=setTimeout('contador2()',1000);
+    
+    if(restante2>0 && restante2<1){
+      document.location.href = document.location.href;
+      
+    }
+    if(restante2>=0){
+      document.getElementById('contador2').innerHTML=horas+" h "+minutos+" m "+segundos+" s -> "+cantidad2+" unidades";
+    }
+      
+    
+    
+  }
+</script>
+
+
+<script type="text/javascript">
+  var restante3 = '{{restante3}}';
+  var vuelta3 = '{{vuelta3}}';
+  var vuelta;
+  function contador3(){
+    
+    
+    var horas=Math.floor(restante3/3600);
+    var minutos=Math.floor((restante3-(horas*3600))/60);
+    var segundos=Math.floor(restante3-(horas*3600)-(minutos*60));
+    
+    restante3=restante3-1;
+    var recharge=setTimeout('contador3()',1000);
+    
+    if(restante3>0 && restante3<1){
+      document.location.href = document.location.href;
+      
+    }
+    if(vuelta3==1){
+      vuelta="ataque de vuelta";
+    }else{
+      vuelta="ataque de ida"; 
+    }
+    if(restante3>=0){
+      document.getElementById('contador3').innerHTML=horas+" h "+minutos+" m "+segundos+" s -> "+vuelta;
+    }
+      
+    
+    
+  }
+</script>
+
+
+
+<script type="text/javascript">
+  var restante4 = '{{restante4}}';
+  var vuelta4 = '{{vuelta4}}';
+  var vuelta;
+  function contador4(){
+    
+    
+    var horas=Math.floor(restante4/3600);
+    var minutos=Math.floor((restante4-(horas*3600))/60);
+    var segundos=Math.floor(restante4-(horas*3600)-(minutos*60));
+    
+    restante4=restante4-1;
+    var recharge=setTimeout('contador4()',1000);
+    
+    if(restante4>0 && restante4<1){
+      document.location.href = document.location.href;
+      
+    }
+    if(vuelta4==1){
+      vuelta="comercio vuelta";
+    }else{
+      vuelta="comercio ida";  
+    }
+    if(restante4>=0){
+      document.getElementById('contador4').innerHTML=horas+" h "+minutos+" m "+segundos+" s -> "+vuelta;
+    }
+      
+    
+    
+  }
+</script>
+
+<script type="text/javascript">
+function alerta(){
+
+swal("Good job!", "Action completed successfully!", "success")
+
+}
+
+</script>
+
+</head>
+<body onLoad="kk(), reloj(),contador1(),contador2(),contador3(),contador4(), alerta()"  style="background-color:#000000">
+
+
+
+<!-- CABECERA DE LA PAGINA-->
+
+<header>
+	<div class="navbar-fixed">
+  <nav class="orange animated fadeInDown" style="height:100px; z-index:111;">
+  	
+    <div class="nav-wrapper orange animated fadeInDown">
+      <a href="/game/city" class="brand-logo center" id="logo" style=" padding-top: 15px">War Commander</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+        <div  style="height:100px; padding-top: 15px; float:left; margin-right:10px">Wellcome, {{nombreusuario}}</div>
+        <div id="reloj" style="height:100px; padding-top: 15px; float:left; margin-right:10px"></div>
+
+        <li><a href="/game/messages/" class="waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Messages" style="height:100px; padding-top: 15px"><i class="material-icons">email</i></a></li>
+        <li><a href="/game/reports/" class="waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Reports" style="height:100px; padding-top: 15px"><i class="material-icons">description</i></a></li>
+        <li><a href="/game/ranking/" class="waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Ranking" style="height:100px; padding-top: 15px"><i class="material-icons">timeline</i></a></li>
+
+
+
+        <li><a href="/" class="waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Exit" style="height:100px; padding-top: 15px"><i class="material-icons">exit_to_app</i></a></li>
+        
+      </ul>
+
+      <ul class="left hide-on-med-and-down">
+          
+          <li><a href="/game/city" class="waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="City" style="height:100px; padding-top: 15px"><i class="material-icons" style="font-size: 50px">location_city</i></a></li>
+          <li><a href="/game/world" class="waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="World" style="height:100px; padding-top: 15px"><i class="material-icons" style="font-size: 50px">public</i></a></li>
+
+
+
+          <li ><a href="#" class="waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Wood" style="height:100px; padding-top: 15px"><i class="material-icons left">nature</i><div id="madera" style="width: 100px"></div></a></li>
+          <li><a href="#" class="waves-effect waves-light  tooltipped" data-position="bottom" data-delay="50" data-tooltip="Iron" style="height:100px; padding-top: 15px"><i class="material-icons left">terrain</i><div id="metal" style="width: 100px"></div></a></li>
+          <li><a href="#" class="waves-effect waves-light tooltipped" data-position="bottom" data-delay="50" data-tooltip="Food" style="height:100px; padding-top: 15px"><i class="material-icons left">local_dining</i><div id="comida" style="width: 120px">{{cantidad}}/{{capacidad}}</div></a></li>
+        </ul>
+    </div>
+  </nav>
+</div>
+</header>
+
+
+
+
+
+
+
+
+        {% block content %}{% endblock %}
+
+<!-- menu lateral izquierda-->
+
+<ul id="slide-out" class="side-nav fixed black animated fadeInLeft" style="z-index:1">
+      <div style="height:100px; color:#FFFFFF"></div>
+      <div style="color:#FFFFFF" class="animated zoomInDown"><center><p id="logociudad" style="margin: 0; padding: 0;">{{nombrepoblado}}</p></center></div>
+      {% if faccionusuario == 'orcos' %}
+              <center><img class="animated fadeInLeft" src="{% static 'images/orda.jpg' %}" width="200"/></center>
+      {% endif %}
+      {% if faccionusuario != 'orcos' %}
+              <center><img class="animated fadeInLeft" src="{% static 'images/ali.jpg' %}" width="200"/></center>
+      {% endif %}
+      <div style="color:#FFFFFF" class="animated zoomInDown"><center><p id="logociudad" style="margin: 0; padding: 0;">EVENTS</p></center></div>
+      <font color="#FFFF00"><center><div id="contador1"></div></center></font>
+            <font color="#FFFF00"><center><div id="contador2"></div></center></font>
+            <font color="#FFFF00"><center><div id="contador3"></div></center></font>
+            <font color="#FFFF00"><center><div id="contador4"></div></center></font>
+</ul>
+
+<!-- menu lateral derecha-->
+
+<ul id="slide-out" class="right-aligned side-nav fixed black animated fadeInRight" style="z-index:1">
+      <div style="height:100px; color:#FFFFFF"></div>
+      <div style="color:#FFFFFF" class="animated zoomInDown"><center><p id="logociudad" style="margin: 0; padding: 0;">ARMY</p></center></div>
+      <div>
+        {% if faccionusuario == 'orcos' %}
+                
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/peon.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad99}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/grunt.gif' %}" style="float:left;height:90px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad1}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/lanzahachas.gif' %}" style="float:left;height:90px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad2}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/chaman.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad3}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/tauren.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad4}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/demoledor.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad5}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/incursor.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad6}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/murcielago.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad7}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/vidente.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad8}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/wyvern.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad9}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/kodo.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad10}}</font></div>
+                </div>
+
+
+
+                
+        {% endif %}
+        {% if faccionusuario != 'orcos' %}
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/campesino.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad99}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/soldadoraso.gif' %}" style="float:left;height:90px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad1}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/fusilero.gif' %}" style="float:left;height:90px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad2}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/hechicera.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad3}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/paladin.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad4}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/mortero.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad5}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/caballero.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad6}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/grifo.gif' %}" style="float:left;height:75px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad7}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/archimago.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad8}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/autogiro.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad9}}</font></div>
+                </div>
+
+                <div style="width:100%;display: inline-block;padding-left:20%" class="animated bounceInRight">
+                  <div style="width:50%"><img class="animated fadeInLeft" src="{% static 'images/tanque.gif' %}" style="float:left;height:80px;"/></div>
+                  <div style="float:right;width:50%;padding-top:11%"><font color="#FFFF00">{{unidad10}}</font></div>
+                </div>
+        {% endif %}
+      </div>
+
+      
+</ul>
+
+
+
+
+<!-- FOOTER DE LA PAGINA -->
+<footer class="page-footer orange" style="margin-top:100px; padding-top:0px;">
+    <br>
+          <div class="container" >
+            <div class="row">
+              <div class="col l6 s12" >
+                <h5 class="white-text">War Commander</h5>
+                <p class="grey-text text-lighten-4">Contact with us at warcommander@gmail.com</p>
+
+
+                 <div class="chip">Game</div>
+                 <div class="chip">Mmorpg</div>
+                 <div class="chip">Humans</div>
+                 <div class="chip">Orcs</div>
+                 <div class="chip">War</div>
+
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Github</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Youtube</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            2015 War Commander, All rights reserved.
+            <a class="grey-text text-lighten-4 right" href="/" style="margin-right: 120px">www.warcommander.com</a>
+            </div>
+          </div>
+        </footer>
+
+
+<script>
+ $(document).ready(function(){
+   // Activate the side menu
+   $(".dropdown-button").dropdown();
+  });
+</script>
+
+<!-- ACTIVA EL SLIDER -->
+<script>
+     $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+    });
+</script>

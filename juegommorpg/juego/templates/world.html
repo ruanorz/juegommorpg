@@ -1,0 +1,1240 @@
+{% extends "baseGame.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+
+{% if faccionusuario == 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalOrcos">
+
+<div class="col s12 m4 l2"><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:10px">
+
+
+<table border="1" background="{% static 'images/mapa.jpg' %}" width="500" height="500" style="margin-top:150px">
+	<tr height="70">
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 0 and x.coordinateY == 0 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons" style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 0 and x.coordinateY == 1 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 0 and x.coordinateY == 2 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 0 and x.coordinateY == 3 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 0 and x.coordinateY == 4 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 0 and x.coordinateY == 5 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+    </tr>
+    <!-- eeeeeeeeeeeeee -->
+    <tr height="70">
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 1 and x.coordinateY == 0 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons" style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 1 and x.coordinateY == 1 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 1 and x.coordinateY == 2 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 1 and x.coordinateY == 3 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 1 and x.coordinateY == 4 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 1 and x.coordinateY == 5 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+    </tr>
+    <!-- eeeeeeeeeeeeee -->
+    <tr height="70">
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 2 and x.coordinateY == 0 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons" style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 2 and x.coordinateY == 1 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 2 and x.coordinateY == 2 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 2 and x.coordinateY == 3 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 2 and x.coordinateY == 4 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 2 and x.coordinateY == 5 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+    </tr>
+    <!-- eeeeeeeeeeeeee -->
+    <tr height="70">
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 3 and x.coordinateY == 0 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons" style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 3 and x.coordinateY == 1 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 3 and x.coordinateY == 2 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 3 and x.coordinateY == 3 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 3 and x.coordinateY == 4 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 3 and x.coordinateY == 5 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+    </tr>
+    <!-- eeeeeeeeeeeeee -->
+    <tr height="70">
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 4 and x.coordinateY == 0 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons" style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 4 and x.coordinateY == 1 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 4 and x.coordinateY == 2 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 4 and x.coordinateY == 3 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 4 and x.coordinateY == 4 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 4 and x.coordinateY == 5 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+    </tr>
+    <!-- eeeeeeeeeeeeee -->
+    <tr height="70">
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 5 and x.coordinateY == 0 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons" style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 5 and x.coordinateY == 1 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 5 and x.coordinateY == 2 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 5 and x.coordinateY == 3 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 5 and x.coordinateY == 4 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 5 and x.coordinateY == 5 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+    </tr>
+    <!-- eeeeeeeeeeeeee -->
+    
+</table>
+
+
+    </div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+
+{% endif %}
+{% if faccionusuario != 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalHumanos">
+
+
+
+
+<div class="col s12 m4 l2"><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:10px">
+
+
+<table border="1" background="{% static 'images/mapa.jpg' %}" width="500" height="500" style="margin-top:150px">
+	<tr height="70">
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 0 and x.coordinateY == 0 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons" style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 0 and x.coordinateY == 1 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 0 and x.coordinateY == 2 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 0 and x.coordinateY == 3 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 0 and x.coordinateY == 4 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 0 and x.coordinateY == 5 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+    </tr>
+    <!-- eeeeeeeeeeeeee -->
+    <tr height="70">
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 1 and x.coordinateY == 0 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons" style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 1 and x.coordinateY == 1 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 1 and x.coordinateY == 2 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 1 and x.coordinateY == 3 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 1 and x.coordinateY == 4 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 1 and x.coordinateY == 5 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+    </tr>
+    <!-- eeeeeeeeeeeeee -->
+    <tr height="70">
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 2 and x.coordinateY == 0 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons" style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 2 and x.coordinateY == 1 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 2 and x.coordinateY == 2 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 2 and x.coordinateY == 3 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 2 and x.coordinateY == 4 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 2 and x.coordinateY == 5 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+    </tr>
+    <!-- eeeeeeeeeeeeee -->
+    <tr height="70">
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 3 and x.coordinateY == 0 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons" style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 3 and x.coordinateY == 1 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 3 and x.coordinateY == 2 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 3 and x.coordinateY == 3 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 3 and x.coordinateY == 4 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 3 and x.coordinateY == 5 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+    </tr>
+    <!-- eeeeeeeeeeeeee -->
+    <tr height="70">
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 4 and x.coordinateY == 0 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons" style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 4 and x.coordinateY == 1 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 4 and x.coordinateY == 2 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 4 and x.coordinateY == 3 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 4 and x.coordinateY == 4 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 4 and x.coordinateY == 5 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+    </tr>
+    <!-- eeeeeeeeeeeeee -->
+    <tr height="70">
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 5 and x.coordinateY == 0 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons" style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 5 and x.coordinateY == 1 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 5 and x.coordinateY == 2 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 5 and x.coordinateY == 3 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 5 and x.coordinateY == 4 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+		<td width="70">
+			<p align="center">
+				{% for x in jugadores %}
+					{% if x.coordinateX == 5 and x.coordinateY == 5 %}
+						{% if x.faction == "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: red;">location_city</i></a><br>
+							<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+						{% if x.faction != "orcos" %}
+							<a href="/game/playerAction/{{x.id}}"><i class="material-icons " style="font-size: 50px; color: blue;">location_city</i></a><br>
+						<a href="/game/playerAction/{{x.id}}"><b>{{x.town}}</b></a>
+						{% endif %}
+					{% endif %}
+				{% endfor %}
+			</p>
+		</td>
+    </tr>
+    <!-- eeeeeeeeeeeeee -->
+    
+</table>
+
+
+    </div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+{% endif %}
+
+
+
+
+{% endblock %}

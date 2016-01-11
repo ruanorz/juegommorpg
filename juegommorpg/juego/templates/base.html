@@ -1,0 +1,124 @@
+{% load staticfiles %}
+
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>WarCommander - {% block title %}{% endblock %}</title>
+	<!-- FUENTES -->
+    <!-- LETRAS LOGO CODEINCOAT -->
+	<link href='https://fonts.googleapis.com/css?family=Amatic+SC:700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!-- LETRAS DE PRUEBA -->
+    <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
+
+	<!-- HOJAS DE ESTILOS
+	<link rel="stylesheet" type="text/css" href="{% static 'dist/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'dist/flexbox/index.min.css' %}">-->
+	<link rel="stylesheet" type="text/css" href="{% static 'dist/materialize/css/materialize.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mycss.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'dist/animatecss/animate.css' %}">
+
+	<!-- ICONOS -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<!-- SCRIPTS -->
+	<script type="text/javascript" src="{{ STATIC_URL }} /static/dist/jquery/jquery-1.11.3.min.js">
+	</script>
+	<script type="text/javascript" src="{{ STATIC_URL }} /static/dist/materialize/js/materialize.min.js">
+	</script>
+
+</head>
+<body>
+
+
+
+<!-- CABECERA DE LA PAGINA-->
+
+<header>
+	<div class="navbar-fixed ">
+  <nav class="orange animated fadeInDown">
+  	<ul id="dropdown1" class="dropdown-content">
+	  <li><a href="/accounts/login">LOGIN</a></li>
+	  <li class="divider"></li>
+	  <li><a href="/accounts/choose_faction">REGISTER</a></li>
+	</ul>
+    <div class="nav-wrapper orange animated fadeInDown">
+      <a href="/" class="brand-logo" id="logo">War Commander</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/" class="waves-effect waves-light">Home</a></li>
+        <li><a href="#!" class="waves-effect waves-light">Forum</a></li>
+        <li><a href="#!" class="waves-effect waves-light">Status</a></li>
+          <li><a href="#!" class="waves-effect waves-light">Statistics</a></li>
+        <li><a class="dropdown-button waves-effect waves-light animated infinite tada" href="#!" data-activates="dropdown1" data-beloworigin="true">PLAY<i class="material-icons right">arrow_drop_down</i></a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+</header>
+
+
+
+
+
+
+
+
+        {% block content %}{% endblock %}
+
+
+
+
+
+
+
+<!-- FOOTER DE LA PAGINA -->
+<footer class="page-footer orange" style="margin-top:0px; padding-top:0px;">
+    <br>
+          <div class="container" >
+            <div class="row">
+              <div class="col l6 s12" >
+                <h5 class="white-text">War Commander</h5>
+                <p class="grey-text text-lighten-4">Contact with us at warcommander@gmail.com</p>
+
+
+                 <div class="chip">Game</div>
+                 <div class="chip">Mmorpg</div>
+                 <div class="chip">Humans</div>
+                 <div class="chip">Orcs</div>
+                 <div class="chip">War</div>
+
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Github</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Youtube</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            2015 War Commander, All rights reserved.
+            <a class="grey-text text-lighten-4 right" href="/">www.warcommander.com</a>
+            </div>
+          </div>
+        </footer>
+
+
+<script>
+ $(document).ready(function(){
+   // Activate the side menu
+   $(".dropdown-button").dropdown();
+  });
+</script>
+
+<!-- ACTIVA EL SLIDER -->
+<script>
+     $(document).ready(function(){
+      $('.slider').slider({full_width: true});
+    });
+</script>

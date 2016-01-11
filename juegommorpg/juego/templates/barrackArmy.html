@@ -1,0 +1,110 @@
+{% extends "baseGame.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+
+{% if faccionusuario == 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalOrcos">
+
+<div class="col s12 m4 l2" ><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:150px; ">
+    	<div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">ARMY!</span>
+              <center>
+              		<img src="{% static 'images/cuartelo.png' %}" width="172" height="176" />
+              		
+
+
+                  <table border="0">
+                    <tr>
+                        <td><b>Unidad</b></td>
+                        <td><b>Caracteristicas</b></td>
+                        <td><b>Coste</b></td>
+                    </tr>
+                    {% for x in buenos %}
+
+                      <tr>
+                        <td><b><a href="/game/build/barrack/army2/{{x.2}}" class="kk" style="text-decoration: underline;">{{x.1}}</a></b></td>
+                        <td><b>Atack:{{x.3}}<br>Defence:{{x.4}}<br>Velocity:{{x.6}}</b></td>
+                        <td><b>Wood:{{x.7}}<br>Iron:{{x.8}}<br>Food:{{x.9}}</b></td>
+                        <td><img src="/static/images/{{x.13}}"  /></td>
+                      </tr>
+
+                    {% endfor %}
+                  </table>
+              </center>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+	</div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+</div>
+{% endif %}
+{% if faccionusuario != 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalHumanos">
+
+ 
+<div class="col s12 m4 l2" ><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:150px">
+      <div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">ARMY!</span>
+              <center>
+                  <img src="{% static 'images/cuartela.png' %}" width="172" height="176" />
+                  
+
+
+                  <table border="0">
+                    <tr>
+                        <td><b>Unidad</b></td>
+                        <td><b>Caracteristicas</b></td>
+                        <td><b>Coste</b></td>
+                    </tr>
+                    {% for x in buenos %}
+
+                      <tr>
+                        <td><b><a href="/game/build/barrack/army2/{{x.2}}" class="kk" style="text-decoration: underline;">{{x.0}}</a></b></td>
+                        <td><b>Atack:{{x.3}}<br>Defence:{{x.4}}<br>Velocity:{{x.6}}</b></td>
+                        <td><b>Wood:{{x.7}}<br>Iron:{{x.8}}<br>Food:{{x.9}}</b></td>
+                        <td><img src="/static/images/{{x.11}}"  /></td>
+                      </tr>
+
+                    {% endfor %}
+                  </table>
+              </center>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+{% endif %}
+
+
+
+
+{% endblock %}

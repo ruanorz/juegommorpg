@@ -1,0 +1,133 @@
+{% extends "baseGame.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+
+{% if faccionusuario == 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalOrcos">
+
+
+<div class="col s12 m4 l2" ><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:150px; ">
+      <div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">RANKING!</span>
+              <center>
+                  
+                  <i class="material-icons " style="font-size: 100px;">timeline</i>
+
+                  <table border="0" >
+<tr>
+  <td>
+      <center><font color="#000000">POS.</font></center>
+    </td>
+    <td>
+      <center><font color="#000000">USUARIO</font></center>
+    </td>
+    <td>
+      <center><font color="#000000">PUNTOS</font></center>
+    </td>
+</tr>
+
+{% for x in devueltobueno %}
+
+  <tr>
+  <td>
+      <center><font color="#000000">{{forloop.counter}}</font></center>
+    </td>
+    <td>
+      <center><font color="#000000">{{x.0}}</font></center>
+    </td>
+    <td>
+      <center><font color="#000000">{{x.1}}</font></center>
+    </td>
+</tr>
+
+{% endfor %}
+
+</table>
+              </center>
+            </div>
+            <div class="card-action">
+              <a href="/game/city/">back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+
+{% endif %}
+{% if faccionusuario != 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalHumanos">
+
+
+<div class="col s12 m4 l2" ><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:150px; ">
+      <div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">RANKING!</span>
+              <center>
+                  
+                  <i class="material-icons " style="font-size: 100px;">timeline</i>
+
+                  <table border="0" >
+<tr>
+  <td>
+      <center><font color="#000000">POS.</font></center>
+    </td>
+    <td>
+      <center><font color="#000000">USUARIO</font></center>
+    </td>
+    <td>
+      <center><font color="#000000">PUNTOS</font></center>
+    </td>
+</tr>
+
+{% for x in devueltobueno %}
+
+  <tr>
+  <td>
+      <center><font color="#000000">{{forloop.counter}}</font></center>
+    </td>
+    <td>
+      <center><font color="#000000">{{x.0}}</font></center>
+    </td>
+    <td>
+      <center><font color="#000000">{{x.1}}</font></center>
+    </td>
+</tr>
+
+{% endfor %}
+
+</table>
+              </center>
+            </div>
+            <div class="card-action">
+              <a href="/game/city/">back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+{% endif %}
+
+
+
+
+{% endblock %}

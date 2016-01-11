@@ -1,0 +1,75 @@
+{% extends "baseGameAlert.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+
+{% if faccionusuario == 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalOrcos">
+
+<div class="col s12 m4 l2" ><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:150px">
+    	<div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">WALL!</span>
+              <center>
+              		<img src="{% static 'images/murallao.png' %}" width="172" height="176" />
+                  <font color="black"><b>
+              		<p>UPDATING YOUR BUILDING IS PROPERLY!</p></b></font>
+              </center>
+            </div>
+            <div class="card-action">
+              <a href="/game/city/">back</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+	</div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+
+{% endif %}
+{% if faccionusuario != 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalHumanos">
+
+
+<div class="col s12 m4 l2" ><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:150px">
+      <div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">WALL!</span>
+              <center>
+                  <img src="{% static 'images/murallaa.png' %}" width="172" height="176" />
+                  <font color="black"><b>
+                  <p>UPDATING YOUR BUILDING IS PROPERLY!</p>
+                </b></font>
+              </center>
+            </div>
+            <div class="card-action">
+              <a href="/game/city/">back</a>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+{% endif %}
+
+
+
+
+{% endblock %}

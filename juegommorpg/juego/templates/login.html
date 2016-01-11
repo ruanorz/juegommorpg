@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+{% load staticfiles%}
+
+
+<div class="row">
+        <div class="col s6 offset-s3" style="margin-top:40px">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">LOGIN NOW!</span>
+              <center>
+                	<form action="/accounts/loginComplete/" method="post">
+                		{% csrf_token %}
+                    <div style="margin-right: 20%; margin-left:20%">
+                    	<font color="#000000">Name: </font><input type="text" name="nombre" value="" placeholder="Name"/><br />
+                        <font color="#000000">Password: </font><input type="password" name="password" value="" placeholder="Password"/><br />
+                        </div>
+                        <button class="btn waves-effect waves-light" type="submit" name="action" value="enviar">Play
+    <i class="material-icons right">send</i>
+  </button>
+                    </form>
+                </center>
+            </div>
+            <div class="card-action">
+              <a href="/">Back</a>
+              <a href="/accounts/registration/">No account yet? Register now!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+                
+
+
+{% endblock %}

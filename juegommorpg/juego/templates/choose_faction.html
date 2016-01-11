@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+{% load staticfiles%}
+
+<script>
+            function cambiar_color_over(celda){
+                tablacontenido.style.backgroundImage="url({% static 'images/registrateorco.png' %})";
+                
+            }
+            function cambiar_color_out(celda){
+                tablacontenido.style.backgroundImage="url({% static 'images/fondoregistrate.png' %})";
+                
+            }
+			
+			
+			function cambiar_color_over2(celda){
+                tablacontenido.style.backgroundImage="url({% static 'images/registratehumano.png' %})";
+                
+            }
+            function cambiar_color_out2(celda){
+                tablacontenido.style.backgroundImage="url({% static 'images/fondoregistrate.png' %})";
+                
+            }
+</script>
+
+
+    
+    
+    <center><table border="0"  id="tablacontenido" background="{% static 'images/fondoregistrate.png' %}" style="background-repeat: no-repeat; width:700px; height:750px; margin-top: 30px">
+    	<tr>
+        	<td id="celda" onmouseover="cambiar_color_over(this)" onmouseout="cambiar_color_out(this)">
+            	<form action="/accounts/registration/" method="post">
+            		{% csrf_token %}
+            		<input type="image" name="faccion" value="orcos" src="{% static 'images/fondotablaregistrate.png' %}" />
+
+                </form>
+            </td>
+            <td id="celda2" onmouseover="cambiar_color_over2(this)" onmouseout="cambiar_color_out2(this)">
+            	<form action="/accounts/registration/" method="post">
+            		{% csrf_token %}
+            		
+            		<input type="image" name="faccion" value="humanos" src="{% static 'images/fondotablaregistrate.png' %}" />
+                </form>
+            </td>
+        </tr>
+    </table></center>
+ 
+
+
+
+
+{% endblock %}

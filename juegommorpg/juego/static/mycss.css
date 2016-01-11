@@ -1,0 +1,87 @@
+html,body{
+ margin:0;
+ /*font-family: 'Open Sans', sans-serif;*/
+ background-color: #D3D3D3;
+}
+
+
+.be-red{
+ background-color: #E74C3C;
+}
+.full-height{
+	height: 100%;
+}
+.no-list{
+ list-style:none;
+}
+.white{
+ color: #ECF0F1;
+}
+.articulos{
+ padding: 30px 60px;
+}
+.large-padding{
+ padding: 30px 7px;
+}
+a,a:visited{
+ color: inherit !important;
+}
+.no-margin{
+ margin: 0px;
+}
+
+
+#logo{
+ font-size: 3em;
+ font-family: 'Amatic SC', cursive;
+ font-weight: bold;
+ padding-left: 1em;
+ color: #ECF0F1;
+}
+
+#logoprincipal{
+
+ font-size: 10em;
+ font-family: 'Amatic SC', cursive;
+ font-weight: bold;
+ color: #ff9800;
+ text-shadow: 4px 3px 9px rgba(150, 150, 150, 1);
+}
+#logociudad{
+
+ font-size: 3em;
+ font-family: 'Amatic SC', cursive;
+ font-weight: bold;
+ color: #ff9800;
+ text-shadow: 4px 3px 9px rgba(150, 150, 150, 1);
+}
+#imagenResponsiveFondoPrincipal{
+    margin-top:-70px;
+	background-image: url(/static/images/fondoprueba.png);
+	background-size:100% auto;
+
+	background-repeat: no-repeat;
+	height: auto;
+	min-height: 600px;
+}
+#imagenResponsiveFondoPrincipalOrcos{
+    margin-top:-70px;
+	background-image: url(/static/images/fondoorcos.jpg);
+	background-size:100% auto;
+
+	background-repeat: no-repeat;
+	height: auto;
+	min-height: 600px;
+}
+#imagenResponsiveFondoPrincipalHumanos{
+    margin-top:-70px;
+	background-image: url(/static/images/fondohumanos.jpg);
+	background-size:100% auto;
+
+	background-repeat: no-repeat;
+	height: auto;
+	min-height: 600px;
+}
+
+
+

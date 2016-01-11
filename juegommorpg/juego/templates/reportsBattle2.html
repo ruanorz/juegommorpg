@@ -1,0 +1,95 @@
+{% extends "baseGame.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+
+{% if faccionusuario == 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalOrcos">
+
+<div class="col s12 m4 l2" ><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:150px">
+    	<div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">BATTLE REPORT!</span>
+              <center>
+                <i class="material-icons " style="font-size: 100px;">
+                  description</i>
+              		
+
+<table border="1" width="600" height="300">
+      
+        <tr height="30">
+          <td><font color="#000000">Battle time: <b>{{mensajes.date}}</b></font></td>
+        </tr>
+        <tr height="100">
+          <td><font color="#000000"><center><b>{{mensajes.text}}</b></center></font></td>
+        </tr>
+    </table>
+
+                  
+                </center>
+            </div>
+            <div class="card-action">
+               <a href="/game/reports/">back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+	</div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+
+{% endif %}
+{% if faccionusuario != 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalHumanos">
+
+
+<div class="col s12 m4 l2" ><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:150px">
+      <div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+              <span class="card-title">BATTLE REPORT!</span>
+              <center>
+                <i class="material-icons " style="font-size: 100px;">description</i>
+                  
+
+<table border="1" width="600" height="300">
+      
+        <tr height="30">
+          <td><font color="#000000">Battle time: <b>{{mensajes.date}}</b></font></td>
+        </tr>
+        <tr height="100">
+          <td><font color="#000000"><center><b>{{mensajes.text}}</b></center></font></td>
+        </tr>
+    </table>
+
+                  
+                </center>
+            </div>
+            <div class="card-action">
+              <a href="/game/reports/">back</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+{% endif %}
+
+
+
+
+{% endblock %}

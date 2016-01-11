@@ -1,0 +1,138 @@
+{% extends "baseGame.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+
+{% if faccionusuario == 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalOrcos">
+
+<div class="col s12 m4 l2" ><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:150px">
+    	<div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+
+              
+              <span class="card-title">{{tio.town}}</span>
+              <center>
+                  {% if facciontio == 'orcos' %}
+                  <i class="material-icons " style="font-size: 100px; color: red;">location_city</i>
+                  {% endif %}
+                  {% if facciontio != 'orcos' %}
+                  <i class="material-icons " style="font-size: 100px; color: blue;">location_city</i>
+                  {% endif %}
+                  <font color="black"><b><p>OWNER: {{tio.name}}</p><br></b></font>
+                  
+                  {% if jugador.name != tio.name %}
+              		{% if faccionusuario == facciontio %}
+                    <form action="/game/trade/" method="post">
+                    {% csrf_token %}
+              		  <button class="btn waves-effect waves-light" type="submit" name="action" value="enviar">Trade
+    <i class="material-icons right">send</i>
+                    <input type="hidden" name="idtio" value="{{tio.id}}" />
+                    </form>
+                  {% endif %}
+                  {% if faccionusuario != facciontio %}
+                    <form action="/game/attack/" method="post">
+                    {% csrf_token %}
+                    <button class="btn waves-effect waves-light" type="submit" name="action" value="enviar">Attack
+    <i class="material-icons right">send</i>
+                    <input type="hidden" name="idtio" value="{{tio.id}}" />
+                    </form>
+                  {% endif %}
+                  <form action="/game/messages/send/" method="post">
+                    {% csrf_token %}
+                    <button class="btn waves-effect waves-light" type="submit" name="action" value="enviar">Send Message
+    <i class="material-icons right">send</i>
+                    <input type="hidden" name="idtio" value="{{tio.id}}" />
+                    </form>
+                  {% endif %}
+              </center>
+              
+            </div>
+            <div class="card-action">
+              <a href="/game/world/">back</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+	</div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+
+{% endif %}
+{% if faccionusuario != 'orcos' %}
+<div class="row full-height valign-wrapper center-align no-margin" id="imagenResponsiveFondoPrincipalHumanos">
+
+
+<div class="col s12 m4 l2" ><p></p></div>
+    <div class="col s12 m4 l8" style="margin-top:150px">
+      <div class="row">
+        <div class="col s6 offset-s3">
+          <div class="card amber lighten-2">
+            <div class="card-content white-text">
+
+              
+              <span class="card-title">{{tio.town}}</span>
+              <center>
+                  {% if facciontio == 'orcos' %}
+                  <i class="material-icons " style="font-size: 100px; color: red;">location_city</i>
+                  {% endif %}
+                  {% if facciontio != 'orcos' %}
+                  <i class="material-icons " style="font-size: 100px; color: blue;">location_city</i>
+                  {% endif %}
+                  <font color="black"><b><p>OWNER: {{tio.name}}</p><br></b></font>
+                  
+                  {% if jugador.name != tio.name %}
+                  {% if faccionusuario == facciontio %}
+                    <form action="/game/trade/" method="post">
+                    {% csrf_token %}
+                    <button class="btn waves-effect waves-light" type="submit" name="action" value="enviar">Trade
+    <i class="material-icons right">send</i>
+                    <input type="hidden" name="idtio" value="{{tio.id}}" />
+                    </form>
+                  {% endif %}
+                  {% if faccionusuario != facciontio %}
+                    <form action="/game/attack/" method="post">
+                    {% csrf_token %}
+                    <button class="btn waves-effect waves-light" type="submit" name="action" value="enviar">Attack
+    <i class="material-icons right">send</i>
+                    <input type="hidden" name="idtio" value="{{tio.id}}" />
+                    </form>
+                  {% endif %}
+                  <form action="/game/messages/send/" method="post">
+                    {% csrf_token %}
+                    <button class="btn waves-effect waves-light" type="submit" name="action" value="enviar">Send Message
+    <i class="material-icons right">send</i>
+                    <input type="hidden" name="idtio" value="{{tio.id}}" />
+                    </form>
+                  {% endif %}
+              </center>
+              
+            </div>
+            <div class="card-action">
+              <a href="/game/world/">back</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+    <div class="col s12 m4 l2"><p></p></div>
+
+</div>
+{% endif %}
+
+
+
+
+{% endblock %}
